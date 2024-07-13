@@ -8,4 +8,5 @@ add_executable(RubiksCubeSolver main.cpp
         GenericRubiksCube.h
         RubiksCube3Darray.cpp
         RubiksCube1DArray.cpp
+        RubiksCubeBitboard.cpp
 )
