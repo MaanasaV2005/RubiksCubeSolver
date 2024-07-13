@@ -263,19 +263,20 @@ string GenericRubiksCube::getCornerColorString(uint8_t ind) const {
             str += getColorLetter(getColor(FACE::LEFT, 2, 2));
             break;
 
-//            DBR
+//          DBL
         case 6:
+            str += getColorLetter(getColor(FACE::DOWN, 2, 0));
+            str += getColorLetter(getColor(FACE::BACK, 2, 2));
+            str += getColorLetter(getColor(FACE::LEFT, 2, 0));
+            break;
+
+//          DBR
+        case 7:
             str += getColorLetter(getColor(FACE::DOWN, 2, 2));
             str += getColorLetter(getColor(FACE::BACK, 2, 0));
             str += getColorLetter(getColor(FACE::RIGHT, 2, 2));
             break;
 
-//            DBL
-        case 7:
-            str += getColorLetter(getColor(FACE::DOWN, 2, 0));
-            str += getColorLetter(getColor(FACE::BACK, 2, 2));
-            str += getColorLetter(getColor(FACE::LEFT, 2, 0));
-            break;
     }
     return str;
 }
