@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(RubiksCubeSolver main.cpp
         GenericRubiksCube.cpp
-        GenericRubiksCube.h)
+        GenericRubiksCube.h
+        RubiksCube3Darray.cpp
+        RubiksCube1DArray.cpp
+)
