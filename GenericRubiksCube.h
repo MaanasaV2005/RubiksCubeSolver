@@ -17,7 +17,9 @@ using namespace std;
 
 class GenericRubiksCube {
 public:
-    enum class FACE {
+ virtual ~GenericRubiksCube() = default;
+
+ enum class FACE {
         UP,
         LEFT,
         FRONT,

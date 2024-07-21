@@ -3,12 +3,12 @@
 //
 #pragma once
 
-#include<bits/stdc++.h>
-#include "GenericRubiksCube.h"
-
-
 #ifndef BFSSOLVER_H
 #define BFSSOLVER_H
+
+
+#include<bits/stdc++.h>
+#include "GenericRubiksCube.h"
 
 
 // Typename T: RubiksCube Representation used (3d, 1d, Bitboard)
@@ -71,7 +71,5 @@ public:
         return moves;
     }
 };
-
-
 
 #endif //BFSSOLVER_H

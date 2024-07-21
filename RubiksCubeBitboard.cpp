@@ -1,7 +1,7 @@
 //
 // Created by maanasa on 13-07-2024.
 
-
+#include<bits/stdc++.h>
 #include "GenericRubiksCube.h"
 
 class RubiksCubeBitboard : public GenericRubiksCube {
