@@ -260,26 +260,22 @@ int main() {
 //    cout << (int)cornerDB.getNumMoves(cube) << "\n";
 
 
-// CornerDBMaker Testing --------------------------------------------------------------------------
-    string fileName = "C:\Users\maana\CLionProjects\RubiksCubeSolver\cornerDepth5V1.txt";
-
-//    Code to create Corner Database
-      CornerDBMaker dbMaker(fileName, 0x99);
-      dbMaker.bfsAndStore();
+    string fileName = "C:\\Users\\user\\CLionProjects\\rubiks-cube-solver\\Databases\\cornerDepth5V1.txt";
 
     RubiksCubeBitboard cube;
-    auto shuffleMoves = cube.randomShuffleCube(13);
+    auto shuffleMoves = cube.randomShuffleCube(10); // Reduce to 3 moves for testing
     cube.print();
     for (auto move: shuffleMoves) cout << cube.getMove(move) << " ";
     cout << "\n";
 
     IDAstarsolver<RubiksCubeBitboard, HashBitboard> idaStarSolver(cube, fileName);
+    cout << "Solving..." << endl;
     auto moves = idaStarSolver.solve();
+    cout << "Solved!" << endl;
 
     idaStarSolver.rubiksCube.print();
     for (auto move: moves) cout << cube.getMove(move) << " ";
     cout << "\n";
-
 
     return 0;
 }

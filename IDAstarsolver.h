@@ -2,7 +2,7 @@
 // Created by maana on 21-07-2024.
 //
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "GenericRubiksCube.h"
 #include "CornerPatternDatabase.h"
 
@@ -40,14 +40,14 @@ private:
         visited.clear();
     }
 
-// returns {solved cube, bound}: if the cube was solved
-// returns {rubiksCube, next_bound}, if the cube was not solved
+    // returns {solved cube, bound}: if the cube was solved
+    // returns {rubiksCube, next_bound}, if the cube was not solved
     pair<T, int> IDAstar(int bound) {
-//        priority_queue contains pair(Node, move done to reach that)
+        // priority_queue contains pair(Node, move done to reach that)
         priority_queue<pair<Node, int>, vector<pair<Node, int>>, compareCube> pq;
         Node start = Node(rubiksCube, 0, cornerDB.getNumMoves(rubiksCube));
         pq.push(make_pair(start, 0));
-        int next_bound = 100;
+        int next_bound = INT_MAX;
         while (!pq.empty()) {
             auto p = pq.top();
             Node node = p.first;
@@ -73,7 +73,6 @@ private:
                 }
                 node.cube.invert(curr_move);
             }
-
         }
         return make_pair(rubiksCube, next_bound);
     }
@@ -87,7 +86,7 @@ public:
     }
 
     vector<GenericRubiksCube::MOVE> solve() {
-        int bound = 1;
+        int bound = cornerDB.getNumMoves(rubiksCube); // Initialize bound with the heuristic of the start state
         auto p = IDAstar(bound);
         while (p.second != bound) {
             resetStructure();
@@ -107,7 +106,5 @@ public:
         return moves;
     }
 };
-
-
 
 #endif //IDASTARSOLVER_H
