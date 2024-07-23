@@ -1,11 +1,11 @@
 //
 // Created by maanasa on 13-07-2024.
 
+#pragma once
 #include<bits/stdc++.h>
 #include "GenericRubiksCube.h"
 
 class RubiksCubeBitboard : public GenericRubiksCube {
-
 private:
     uint64_t solved_side_config[6]{};
 
